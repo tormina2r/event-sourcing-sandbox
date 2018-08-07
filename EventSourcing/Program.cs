@@ -14,6 +14,7 @@ namespace EventSourcing
             var repository = new EventRepository();
             var eventBroker = new EventBroker(repository);
             eventBroker.EventAdded += EventBroker_EventAdded;
+            eventBroker.EventReplayed += EventBroker_EventReplayed;
 
             new CreatePersonCommand("Lisa", "Pettersen", eventBroker).Perform();
 
@@ -35,7 +36,7 @@ namespace EventSourcing
 
             Console.WriteLine("Playing all events: ");
             
-            eventBroker.PlayAllEvents();
+            eventBroker.ReplayAllEvents();
 
             Console.ReadKey();
 
@@ -46,6 +47,11 @@ namespace EventSourcing
             eventBroker.PlayUpTo(timeStamp);
 
             Console.ReadKey();
+        }
+
+        private static void EventBroker_EventReplayed(object sender, Event e)
+        {
+            Console.WriteLine($"Event was replayed: {e}");
         }
 
         private static void EventBroker_EventAdded(object sender, Event e)
@@ -69,6 +75,10 @@ namespace EventSourcing
             OnEventAdded(personCreated);
         }
 
+        internal event EventHandler<Event> EventAdded;
+
+        internal event EventHandler<Event> EventReplayed;
+
         private void OnEventAdded(Event @event)
         {
             var handler = EventAdded;
@@ -78,26 +88,33 @@ namespace EventSourcing
             }
         }
 
-        internal void PlayAllEvents()
+        private void OnEventReplayed(Event @event)
         {
-            PlayEvents(_Repository.Events);
+            var handler = EventReplayed;
+            if (handler != null)
+            {
+                handler.Invoke(this, @event);
+            }
         }
 
-        private void PlayEvents(IEnumerable<Event> events)
+        internal void ReplayAllEvents()
         {
-            foreach (var @event in events)
-            {
-                OnEventAdded(@event);
-            }
+            Replay(_Repository.Events);
         }
 
         internal void PlayUpTo(DateTime timeStamp)
         {
             var events = _Repository.Events.Where(p => p.TimeStamp <= timeStamp);
-            PlayEvents(events);
+            Replay(events);
         }
 
-        public event EventHandler<Event> EventAdded;
+        private void Replay(IEnumerable<Event> events)
+        {
+            foreach (var @event in events)
+            {
+                OnEventReplayed(@event);
+            }
+        }
     }
 
     abstract class Command
