@@ -1,0 +1,7 @@
+C:\Dev\EventSourcing\EventSourcing\bin\Debug\EventSourcing.exe.config
+C:\Dev\EventSourcing\EventSourcing\bin\Debug\EventSourcing.exe
+C:\Dev\EventSourcing\EventSourcing\bin\Debug\EventSourcing.pdb
+C:\Dev\EventSourcing\EventSourcing\obj\Debug\EventSourcing.csprojResolveAssemblyReference.cache
+C:\Dev\EventSourcing\EventSourcing\obj\Debug\EventSourcing.csproj.CoreCompileInputs.cache
+C:\Dev\EventSourcing\EventSourcing\obj\Debug\EventSourcing.exe
+C:\Dev\EventSourcing\EventSourcing\obj\Debug\EventSourcing.pdb
