@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9239C5DC-418C-40C9-A78F-4327CF9C0567}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EventSourcing</RootNamespace>
-    <AssemblyName>EventSourcing</AssemblyName>
+    <RootNamespace>EventSourcing.UI.Console</RootNamespace>
+    <AssemblyName>EventSourcing.UI.Console</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoPersistEventStore.cs" />
+    <Compile Include="EventRepository.cs" />
+    <Compile Include="EventStore.cs" />
+    <Compile Include="IEventStore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

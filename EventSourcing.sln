@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing", "EventSourcing\EventSourcing.csproj", "{9239C5DC-418C-40C9-A78F-4327CF9C0567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.UI.Console", "EventSourcing\EventSourcing.UI.Console.csproj", "{9239C5DC-418C-40C9-A78F-4327CF9C0567}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.Data", "EventSourcing.Data\EventSourcing.Data.csproj", "{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.BusinessLogic", "EventSourcing.BusinessLogic\EventSourcing.BusinessLogic.csproj", "{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{9239C5DC-418C-40C9-A78F-4327CF9C0567}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9239C5DC-418C-40C9-A78F-4327CF9C0567}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9239C5DC-418C-40C9-A78F-4327CF9C0567}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
