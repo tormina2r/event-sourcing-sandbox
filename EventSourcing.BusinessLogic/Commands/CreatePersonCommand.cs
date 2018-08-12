@@ -1,8 +1,10 @@
-﻿using System;
+﻿using EventSourcing.BusinessLogic.Events;
+using EventSourcing.BusinessLogic.Models;
+using System;
 
-namespace EventSourcing.Commands
+namespace EventSourcing.BusinessLogic.Commands
 {
-    class CreatePersonCommand : Command
+    public class CreatePersonCommand : Command
     {
         private readonly EventStore _EventBroker;
 

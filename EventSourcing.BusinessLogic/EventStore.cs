@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EventSourcing.BusinessLogic.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EventSourcing
+namespace EventSourcing.BusinessLogic
 {
-    public class EventStore: IEventStore
+    public class EventStore
     {
         private List<Event> _Events;
 

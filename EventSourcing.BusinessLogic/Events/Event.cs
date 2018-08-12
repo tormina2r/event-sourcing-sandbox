@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace EventSourcing.Events
+namespace EventSourcing.BusinessLogic.Events
 {
     public abstract class Event
     {
-        public abstract override string ToString();
+        internal readonly EventType Type;
+                
         public DateTime TimeStamp { get; } = DateTime.Now;
     }
 }

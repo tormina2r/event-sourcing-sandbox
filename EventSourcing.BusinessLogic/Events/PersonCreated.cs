@@ -1,4 +1,6 @@
-﻿namespace EventSourcing.Events
+﻿using EventSourcing.BusinessLogic.Models;
+
+namespace EventSourcing.BusinessLogic.Events
 {
     public class PersonCreated : Event
     {

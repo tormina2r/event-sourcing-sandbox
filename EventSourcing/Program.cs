@@ -1,4 +1,7 @@
-﻿using System;
+﻿using EventSourcing.BusinessLogic;
+using EventSourcing.BusinessLogic.Commands;
+using EventSourcing.BusinessLogic.Events;
+using System;
 
 namespace EventSourcing
 {
@@ -6,8 +9,7 @@ namespace EventSourcing
     {
         static void Main(string[] args)
         {
-            var repository = new EventRepository();
-            var eventStore = new AutoPersistEventStore(repository);
+            var eventStore = new AutoPersistEventStore(new XmlFileEventRepository());
             eventStore.EventAdded += EventStore_EventAdded;
 
             new CreatePersonCommand("Lisa", "Pettersen", eventStore).Perform();

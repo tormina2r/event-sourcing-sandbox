@@ -42,15 +42,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoPersistEventStore.cs" />
-    <Compile Include="EventRepository.cs" />
-    <Compile Include="EventStore.cs" />
-    <Compile Include="IEventStore.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventSourcing.BusinessLogic\EventSourcing.BusinessLogic.csproj">
+      <Project>{d2ab8a29-c088-47c1-86e6-4dabd898d1b1}</Project>
+      <Name>EventSourcing.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSourcing.Data\EventSourcing.Data.csproj">
+      <Project>{7a718a1e-2bb6-4463-a8d3-ccb289c80cbb}</Project>
+      <Name>EventSourcing.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
-﻿namespace EventSourcing.Commands
+﻿namespace EventSourcing.BusinessLogic.Commands
 {
-    abstract class Command
+    public abstract class Command
     {
         public abstract void Perform();
     }

@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.UI.Console", "EventSourcing\EventSourcing.UI.Console.csproj", "{9239C5DC-418C-40C9-A78F-4327CF9C0567}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.Data", "EventSourcing.Data\EventSourcing.Data.csproj", "{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Data", "EventSourcing.Data\EventSourcing.Data.csproj", "{7A718A1E-2BB6-4463-A8D3-CCB289C80CBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.BusinessLogic", "EventSourcing.BusinessLogic\EventSourcing.BusinessLogic.csproj", "{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.BusinessLogic", "EventSourcing.BusinessLogic\EventSourcing.BusinessLogic.csproj", "{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

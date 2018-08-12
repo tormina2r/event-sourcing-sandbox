@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EventSourcing.Models
+namespace EventSourcing.BusinessLogic.Models
 {
     public class Person
     {
