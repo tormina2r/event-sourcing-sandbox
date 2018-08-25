@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using EventSourcing.Data.Events;
+using System.Collections.Generic;
 
 namespace EventSourcing
 {
     public abstract class EventRepository
     {
-        public abstract IEnumerable<EventEntity> Events { get; }
+        public abstract IEnumerable<Event> Events { get; }
 
-        public abstract void Add(EventType type, object value);        
+        public abstract void Add(Event @event);        
 
         public abstract void Save();
     }

@@ -1,19 +1,18 @@
-﻿using EventSourcing.BusinessLogic.Events;
-using EventSourcing.BusinessLogic.Models;
+﻿using EventSourcing.Data.Events;
 using System;
 
 namespace EventSourcing.BusinessLogic.Commands
 {
     public class CreatePersonCommand : Command
     {
-        private readonly EventStore _EventBroker;
+        private readonly EventStore _EventStore;
 
         public CreatePersonCommand(string firstName, string lastName, EventStore eventBroker)
         {
             FirstName = firstName;
             LastName = lastName;
 
-            _EventBroker = eventBroker;
+            _EventStore = eventBroker;
         }
 
         public string FirstName { get; }
@@ -21,8 +20,7 @@ namespace EventSourcing.BusinessLogic.Commands
 
         public override void Perform()
         {
-            var person = new Person { Id = Guid.NewGuid(), FirstName = FirstName, LastName = LastName };
-            _EventBroker.AddEvent(new PersonCreated(person));
+            _EventStore.AddEvent(new PersonCreated { Id = Guid.NewGuid(), FirstName = FirstName, LastName = LastName });
         }
     }
 }

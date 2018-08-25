@@ -1,4 +1,4 @@
-﻿using EventSourcing.BusinessLogic.Events;
+﻿using EventSourcing.Data.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
