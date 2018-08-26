@@ -1,4 +1,4 @@
-﻿using EventSourcing.Data.Events;
+﻿using EventSourcing.BusinessLogic.Models.Events;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,26 +7,26 @@ namespace EventSourcing.BusinessLogic
 {
     public class EventStore
     {
-        private List<Event> _Events;
+        private List<EventModel> _Events;
 
-        public EventStore(IEnumerable<Event> events = null)
+        public EventStore(IEnumerable<EventModel> events = null)
         {
-            _Events = events?.ToList() ?? new List<Event>();
+            _Events = events?.ToList() ?? new List<EventModel>();
         }
 
-        public virtual void AddEvent(Event @event)
+        public virtual void AddEvent(EventModel @event)
         {
             _Events.Add(@event);
             OnEventAdded(@event);
         }
 
-        public event EventHandler<Event> EventAdded;
+        public event EventHandler<EventModel> EventAdded;
 
-        public IEnumerable<Event> GetEventStream() => _Events.OrderBy(p => p.TimeStamp);
+        public IEnumerable<EventModel> GetEventStream() => _Events.OrderBy(p => p.TimeStamp);
 
-        public IEnumerable<Event> GetEventStream(DateTime pointInTime) => _Events.Where(@event => @event.TimeStamp < pointInTime).OrderBy(p => p.TimeStamp);
+        public IEnumerable<EventModel> GetEventStream(DateTime pointInTime) => _Events.Where(@event => @event.TimeStamp < pointInTime).OrderBy(p => p.TimeStamp);
 
-        private void OnEventAdded(Event @event)
+        private void OnEventAdded(EventModel @event)
         {
             var handler = EventAdded;
             if (handler != null)

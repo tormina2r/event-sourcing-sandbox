@@ -1,4 +1,4 @@
-﻿using EventSourcing.Data.Events;
+﻿using EventSourcing.BusinessLogic.Models.Events;
 using System;
 
 namespace EventSourcing.BusinessLogic.Commands
@@ -18,9 +18,6 @@ namespace EventSourcing.BusinessLogic.Commands
         public string FirstName { get; }
         public string LastName { get; }
 
-        public override void Perform()
-        {
-            _EventStore.AddEvent(new PersonCreated { Id = Guid.NewGuid(), FirstName = FirstName, LastName = LastName });
-        }
+        public override void Perform() => _EventStore.AddEvent(new PersonCreatedModel { Person = new Models.Person(Guid.NewGuid(), FirstName, LastName) });
     }
 }

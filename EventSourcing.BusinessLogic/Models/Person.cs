@@ -2,11 +2,17 @@
 
 namespace EventSourcing.BusinessLogic.Models
 {
-    [Serializable]
     public class Person
     {
-        public Guid Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public Person(Guid id, string firstName, string lastName)
+        {
+            Id = id;
+            FirstName = firstName;
+            LastName = LastName;
+        }
+
+        public Guid Id { get; } 
+        public string FirstName { get; }
+        public string LastName { get; }
     }
 }
