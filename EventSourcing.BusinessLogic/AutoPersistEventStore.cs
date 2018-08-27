@@ -16,7 +16,7 @@ namespace EventSourcing.BusinessLogic
             _EventModelFactory = eventModelFactory;
         }
 
-        private static EventModel CreateEventModel(EventModelFactory factory, Event @event) => factory.CreateModel(@event);
+        private static EventModel CreateEventModel(EventModelFactory factory, IEvent @event) => factory.CreateModel(@event);
 
         public override void AddEvent(EventModel @event)
         {

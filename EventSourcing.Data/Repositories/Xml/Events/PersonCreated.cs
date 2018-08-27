@@ -1,9 +1,10 @@
-﻿using System;
+﻿using EventSourcing.Data.Events;
+using System;
 
-namespace EventSourcing.Data.Events
+namespace EventSourcing.Data.Repositories.Xml.Events
 {
     [Serializable]
-    public class PersonCreated : Event
+    public class PersonCreated : Event, IPersonCreated
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }

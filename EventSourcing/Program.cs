@@ -1,6 +1,6 @@
 ﻿using EventSourcing.BusinessLogic;
-using EventSourcing.BusinessLogic.Commands;
 using EventSourcing.BusinessLogic.Models.Events;
+using EventSourcing.Data.Repositories.Xml;
 using System;
 
 namespace EventSourcing
@@ -14,16 +14,6 @@ namespace EventSourcing
 
             var eventStore = new AutoPersistEventStore(repository, eventModelFactory);
             eventStore.EventAdded += EventStore_EventAdded;
-
-            new CreatePersonCommand("Lisa", "Pettersen", eventStore).Perform();
-
-            Console.ReadKey();
-
-            new CreatePersonCommand("Herman", "Andersen", eventStore).Perform();
-
-            Console.ReadKey();
-
-            new CreatePersonCommand("Hennie", "Andersen", eventStore).Perform();
 
             Console.WriteLine("All events in repository: ");
             foreach (var @event in eventStore.GetEventStream())

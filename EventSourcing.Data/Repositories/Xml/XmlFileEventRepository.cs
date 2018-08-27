@@ -5,14 +5,14 @@ using System.Diagnostics;
 using System.IO;
 using System.Xml.Serialization;
 
-namespace EventSourcing
+namespace EventSourcing.Data.Repositories.Xml
 {
     public class XmlFileEventRepository : EventRepository
     {
         private readonly string _Path;
         private readonly EventCollection _EventCollection;
 
-        public override IEnumerable<Event> Events => _EventCollection.Events;
+        public override IEnumerable<IEvent> Events => _EventCollection.Events;
 
         public XmlFileEventRepository(string path)
         {
@@ -21,7 +21,7 @@ namespace EventSourcing
             _EventCollection = GetEventCollectionFromFile(path);            
         }
 
-        public override void Add(Event @event)
+        public override void Add(IEvent @event)
         {
             _EventCollection.Events.Add(@event);
         }

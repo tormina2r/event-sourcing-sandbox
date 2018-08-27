@@ -8,7 +8,7 @@ namespace EventSourcing.BusinessLogic.Models
         {
             Id = id;
             FirstName = firstName;
-            LastName = LastName;
+            LastName = lastName;
         }
 
         public Guid Id { get; } 
