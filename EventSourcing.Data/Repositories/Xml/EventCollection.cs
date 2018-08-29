@@ -1,4 +1,4 @@
-﻿using EventSourcing.Data.Events;
+﻿using EventSourcing.Data.Repositories.Xml.Events;
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -10,7 +10,7 @@ namespace EventSourcing.Data.Repositories.Xml
     public class EventCollection
     {
         [XmlArray("Events")]
-        [XmlArrayItem("Event", typeof(IEvent))]
-        public List<IEvent> Events { get; } = new List<IEvent>();
+        [XmlArrayItem("Event", typeof(Event))]
+        public List<Event> Events { get; } = new List<Event>();
     }
 }

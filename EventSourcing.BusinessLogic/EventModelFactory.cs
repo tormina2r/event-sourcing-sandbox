@@ -9,26 +9,20 @@ namespace EventSourcing.BusinessLogic
     {
         public EventModel CreateModel(IEvent @event)
         {
-            var personCreated = @event as IPersonCreated;
-            if (personCreated != null)
-                return new PersonCreatedModel
-                {
-                    Person = new Models.Person(personCreated.Id, personCreated.FirstName, personCreated.LastName),
-                    TimeStamp = personCreated.TimeStamp                    
-                };
+            if (@event is IPersonCreated personCreated)
+                return new PersonCreatedModel(personCreated.Id, personCreated.FirstName, personCreated.LastName, personCreated.TimeStamp);
 
             throw new InvalidOperationException($"Unknown event of type: {@event.GetType()}");
         }
 
         internal Event CreateEntity(EventModel model)
         {
-            var personCreatedModel = model as PersonCreatedModel;
-            if (personCreatedModel != null)
+            if (model is PersonCreatedModel personCreatedModel)
                 return new PersonCreated
-                {
-                    Id = personCreatedModel.Person.Id,
-                    FirstName = personCreatedModel.Person.FirstName,
-                    LastName = personCreatedModel.Person.LastName,
+                { 
+                    Id = personCreatedModel.Id,
+                    FirstName = personCreatedModel.FirstName,
+                    LastName = personCreatedModel.LastName,
                     TimeStamp = personCreatedModel.TimeStamp
                 };
 

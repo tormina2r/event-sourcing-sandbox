@@ -1,4 +1,5 @@
 ﻿using EventSourcing.Data.Events;
+using EventSourcing.Data.Repositories.Xml.Events;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,7 +24,7 @@ namespace EventSourcing.Data.Repositories.Xml
 
         public override void Add(IEvent @event)
         {
-            _EventCollection.Events.Add(@event);
+            _EventCollection.Events.Add((Event)@event);
         }
 
         public override void Save()

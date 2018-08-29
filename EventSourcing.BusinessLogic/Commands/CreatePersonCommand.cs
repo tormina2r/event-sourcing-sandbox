@@ -18,6 +18,6 @@ namespace EventSourcing.BusinessLogic.Commands
         public string FirstName { get; }
         public string LastName { get; }
 
-        public override void Perform() => _EventStore.AddEvent(new PersonCreatedModel { Person = new Models.Person(Guid.NewGuid(), FirstName, LastName) });
+        public override void Perform() => _EventStore.AddEvent(new PersonCreatedModel(Guid.NewGuid(), FirstName, LastName));
     }
 }
