@@ -7,12 +7,12 @@ namespace EventSourcing.BusinessLogic.Commands
     {
         private readonly EventStore _EventStore;
 
-        public CreatePersonCommand(string firstName, string lastName, EventStore eventBroker)
+        public CreatePersonCommand(string firstName, string lastName, EventStore eventStore)
         {
             FirstName = firstName;
             LastName = lastName;
 
-            _EventStore = eventBroker;
+            _EventStore = eventStore;
         }
 
         public string FirstName { get; }

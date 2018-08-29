@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace EventSourcing.Data.Repositories.Xml
@@ -15,11 +16,11 @@ namespace EventSourcing.Data.Repositories.Xml
 
         public override IEnumerable<IEvent> Events => _EventCollection.Events;
 
-        public XmlFileEventRepository(string path)
+        public XmlFileEventRepository(string path = null)
         {
-            _Path = path;
+            _Path = path ?? GetExecutingPath();
 
-            _EventCollection = GetEventCollectionFromFile(path);            
+            _EventCollection = GetEventCollectionFromFile(_Path);            
         }
 
         public override void Add(IEvent @event)
@@ -59,6 +60,14 @@ namespace EventSourcing.Data.Repositories.Xml
                     throw;
                 }
             }
+        }
+
+        private string GetExecutingPath()
+        {
+            var location = new Uri(Assembly.GetExecutingAssembly().CodeBase);
+            var directory = new FileInfo(location.AbsolutePath).Directory.FullName;
+
+            return $"{directory}\\events.xml";
         }
     }
 }

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.Data", "Event
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSourcing.BusinessLogic", "EventSourcing.BusinessLogic\EventSourcing.BusinessLogic.csproj", "{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSourcing.UI.WinForms", "EventSourcing.UI.WinForms\EventSourcing.UI.WinForms.csproj", "{B12319E7-1BEE-48A4-AF06-2AEF8478A060}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2AB8A29-C088-47C1-86E6-4DABD898D1B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B12319E7-1BEE-48A4-AF06-2AEF8478A060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B12319E7-1BEE-48A4-AF06-2AEF8478A060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B12319E7-1BEE-48A4-AF06-2AEF8478A060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B12319E7-1BEE-48A4-AF06-2AEF8478A060}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

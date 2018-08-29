@@ -11,6 +11,8 @@ namespace EventSourcing.BusinessLogic.Models.Events
 
         public DateTime TimeStamp { get; }
 
+        public string Decription => ToString();
+
         public abstract override string ToString();
     }
 }
