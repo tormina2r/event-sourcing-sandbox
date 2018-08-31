@@ -1,8 +1,8 @@
-﻿using EventSourcing.Data.Events;
+﻿using EventSourcing.ServiceLayer.Events;
 using System;
 using System.Xml.Serialization;
 
-namespace EventSourcing.Data.Repositories.Xml.Events
+namespace EventSourcing.Data.Xml.Events
 {
     [XmlInclude(typeof(PersonCreated))]
     public abstract class Event : IEvent

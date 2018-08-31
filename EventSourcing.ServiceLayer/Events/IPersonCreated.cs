@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EventSourcing.Data.Events
+namespace EventSourcing.ServiceLayer.Events
 {
     public interface IPersonCreated: IEvent
     {

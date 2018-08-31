@@ -53,9 +53,13 @@
       <Project>{d2ab8a29-c088-47c1-86e6-4dabd898d1b1}</Project>
       <Name>EventSourcing.BusinessLogic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EventSourcing.Data\EventSourcing.Data.csproj">
+    <ProjectReference Include="..\EventSourcing.Data\EventSourcing.Data.Xml.csproj">
       <Project>{7a718a1e-2bb6-4463-a8d3-ccb289c80cbb}</Project>
-      <Name>EventSourcing.Data</Name>
+      <Name>EventSourcing.Data.Xml</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventSourcing.ServiceLayer\EventSourcing.ServiceLayer.csproj">
+      <Project>{60912B53-EB74-496D-8706-D21E190B8696}</Project>
+      <Name>EventSourcing.ServiceLayer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

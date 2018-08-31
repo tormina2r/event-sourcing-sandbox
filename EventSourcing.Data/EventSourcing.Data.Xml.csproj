@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>EventSourcing.Data.Xml</AssemblyName>
+    <RootNamespace>EventSourcing.Data.Xml</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventSourcing.ServiceLayer\EventSourcing.ServiceLayer.csproj" />
+  </ItemGroup>
+
+</Project>

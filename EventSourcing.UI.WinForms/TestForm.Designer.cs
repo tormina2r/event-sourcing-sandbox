@@ -38,12 +38,12 @@
             this.gbCommands.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvEvents
             // 
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEvents.Location = new System.Drawing.Point(8, 21);
-            this.dgvEvents.Name = "dataGridView1";
+            this.dgvEvents.Name = "dgvEvents";
             this.dgvEvents.Size = new System.Drawing.Size(768, 180);
             this.dgvEvents.TabIndex = 0;
             // 

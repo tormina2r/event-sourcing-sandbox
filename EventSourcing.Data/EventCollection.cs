@@ -1,9 +1,9 @@
-﻿using EventSourcing.Data.Repositories.Xml.Events;
+﻿using EventSourcing.Data.Xml.Events;
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 
-namespace EventSourcing.Data.Repositories.Xml
+namespace EventSourcing.Data.Xml
 {
     [Serializable]
     [XmlRoot("EventCollection")]

@@ -1,5 +1,6 @@
-﻿using EventSourcing.Data.Events;
-using EventSourcing.Data.Repositories.Xml.Events;
+﻿using EventSourcing.Data.Xml;
+using EventSourcing.Data.Xml.Events;
+using EventSourcing.ServiceLayer.Events;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,12 +10,12 @@ using System.Xml.Serialization;
 
 namespace EventSourcing.Data.Repositories.Xml
 {
-    public class XmlFileEventRepository : EventRepository
+    public class XmlFileEventRepository : IEventRepository
     {
         private readonly string _Path;
         private readonly EventCollection _EventCollection;
 
-        public override IEnumerable<IEvent> Events => _EventCollection.Events;
+        public IEnumerable<IEvent> Events => _EventCollection.Events;
 
         public XmlFileEventRepository(string path = null)
         {
@@ -23,12 +24,12 @@ namespace EventSourcing.Data.Repositories.Xml
             _EventCollection = GetEventCollectionFromFile(_Path);            
         }
 
-        public override void Add(IEvent @event)
+        public void Add(IEvent @event)
         {
             _EventCollection.Events.Add((Event)@event);
         }
 
-        public override void Save()
+        public void Save()
         {
             var directory = Path.GetDirectoryName(_Path);
             if (!Directory.Exists(directory))

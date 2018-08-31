@@ -35,6 +35,6 @@ namespace EventSourcing.UI.WinForms
         private void RefreshEvents()
         {
             dgvEvents.DataSource = _DomainModel.GetEventModels().ToList();
-        }
+        }        
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using EventSourcing.BusinessLogic.Models.Events;
-using EventSourcing.Data.Events;
-using EventSourcing.Data.Repositories.Xml.Events;
+using EventSourcing.Data.Xml.Events;
+using EventSourcing.ServiceLayer.Events;
 
 namespace EventSourcing.BusinessLogic
 {

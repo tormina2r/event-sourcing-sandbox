@@ -1,7 +1,7 @@
-﻿using EventSourcing.Data.Events;
+﻿using EventSourcing.ServiceLayer.Events;
 using System;
 
-namespace EventSourcing.Data.Repositories.Xml.Events
+namespace EventSourcing.Data.Xml.Events
 {
     [Serializable]
     public class PersonCreated : Event, IPersonCreated

@@ -1,15 +1,15 @@
-﻿using EventSourcing.Data.Events;
-using System.Linq;
+﻿using System.Linq;
 using EventSourcing.BusinessLogic.Models.Events;
+using EventSourcing.ServiceLayer.Events;
 
 namespace EventSourcing.BusinessLogic
 {
     public class AutoPersistEventStore : EventStore
     {
-        private readonly EventRepository _Repository;
+        private readonly IEventRepository _Repository;
         private readonly EventModelFactory _EventModelFactory;
 
-        public AutoPersistEventStore(EventRepository repository, EventModelFactory eventModelFactory)
+        public AutoPersistEventStore(IEventRepository repository, EventModelFactory eventModelFactory)
             : base(repository.Events.Select(@event => CreateEventModel(eventModelFactory, @event)))
         {
             _Repository = repository;
